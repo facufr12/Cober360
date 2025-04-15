@@ -1,10 +1,10 @@
 // import node module libraries
-import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Fragment, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Col, Row, Card, Form, Button, Image } from 'react-bootstrap';
-
+import DarkLightMode from 'layouts/DarkLightMode';
 // import media files
-import Logo from 'assets/images/brand/logo/logo-icon.svg';
+import Logo from 'assets/images/coberimages/logo-cober.svg'
 
 const ForgetPassword = () => {
 	return (
@@ -12,36 +12,44 @@ const ForgetPassword = () => {
 			<Row className="align-items-center justify-content-center g-0 min-vh-100">
 				<Col lg={5} md={5} className="py-8 py-xl-0">
 					<Card>
-						<Card.Body className="p-6">
-							<div className="mb-4">
-								<Link to="/">
-									<Image src={Logo} className="mb-4" alt="" />
-								</Link>
-								<h1 className="mb-1 fw-bold">Forgot Password</h1>
-								<span>Fill the form to reset your password.</span>
-							</div>
+					<Card.Body className="p-6">
+					<div className="d-flex justify-content-end mb-3">
+			<DarkLightMode />
+		  </div>
+  <div className="mb-4 text-center">
+    <Link to="/">
+      <Image
+        src={Logo}
+        className="mb-4 mx-auto d-block"
+        alt="Logo Cober"
+        style={{ width: '160px' }}
+      />
+    </Link>
+    <h1 className="mb-1 fw-bold">Recuperar Contraseña</h1>
+  </div>
+
 							{/* Form */}
 							<Form>
 								<Row>
 									<Col lg={12} md={12} className="mb-3">
 										{/*  email */}
-										<Form.Label>Email</Form.Label>
+										<Form.Label>Correo Electrónico</Form.Label>
 										<Form.Control
 											type="email"
 											id="email"
-											placeholder="Enter your email"
+											placeholder="Ingresa tu correo registrado"
 											required
 										/>
 									</Col>
 									<Col lg={12} md={12} className="mb-3 d-grid gap-2">
 										{/* Button */}
 										<Button variant="primary" type="submit">
-											Send Reset Link
+											Enviar Instructivo de recuperacion
 										</Button>
 									</Col>
 								</Row>
 								<span>
-									Return to <Link to="/authentication/sign-in">Sign in</Link>
+									Volver a incio de sesión <Link to="/">Inicio</Link>
 								</span>
 							</Form>
 						</Card.Body>
